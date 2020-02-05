@@ -25,7 +25,7 @@ def Doolittle(A):
                 suma = suma + (L[i][s]* U[s][k])
                 s=s+1
             if U[k][k] == 0.0:
-                raise ZeroDivisionError("Algorytm natrafil na zero na przekatnej.")
+                raise ZeroDivisionError("Zero encountered at the matrix A diagonal.")
             else:
                 L[i][k] = (A[i][k] - suma)/ U[k][k]
 
@@ -41,7 +41,7 @@ def Gauss_regular(A,B):
     for k in range(0, n-1):
         for i in range(k+1, n):
             if A[k][k] == 0.0:
-                raise ZeroDivisionError("Algorytm natrafil na zero na przekatnej.")
+                raise ZeroDivisionError("Zero encountered at the matrix A diagonal.")
             else:
                 z = A[i][k]/A[k][k]
                 A[i][k+1:n] = A[i, k+1:n] - z *A[k,k+1:n]
@@ -50,7 +50,7 @@ def Gauss_regular(A,B):
     #Faza podstawiania wstecz
     for k in range(n-1, -1, -1):
         if A[k][k] == 0.0:
-            raise ZeroDivisionError("Algorytm natrafil na zero na przekatnej.")
+            raise ZeroDivisionError("Zero encountered at the matrix A diagonal.")
         else:
             B[k]= (B[k] -np.dot( A[k,k+1:n], B[k+1:n]))/A[k,k]
 

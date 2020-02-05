@@ -1,5 +1,12 @@
 import numpy as np
 
+class Example():
+    def __init__(self, A, B):
+        self.A = A
+        self.B = B
+    def __repr__():
+        return "{} * X = {}".format(self.A, self.B)
+
 epsilon = 1 / (10 ** 100)
 
 A0 = np.array([  [6,      -2,     2,       4],
@@ -31,3 +38,15 @@ C1 = np.array([ [epsilon,   1],     #epsilon bardzo maly na przekatnej
 
 C2 = np.array([ [1,              epsilon**(-1)],       #epsilon bardzo duzy w porownaniu do innych elementow macierzy
                 [1,                   1]])
+
+Z=   np.array([ [1,  1, 1],
+                [1,2,  3],
+                [1, 3, 6]])
+
+examples = [
+    Example(A0, B0),
+    Example(A1, B0),
+    Example(A2, B2),
+    Example(C1, B4),
+    Example(C2, B3),
+    ]
